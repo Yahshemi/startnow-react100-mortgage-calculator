@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "description": "Base application setup for creating a new react project.",
   "main": "server/index.js",
-  
   "scripts": {
-   "build": "webpack",
+    "build": "webpack",
     "start": "npm run build && node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "mocha test/.setup.js test/*.spec.js --exit"
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.18.0",
     "bluebird": "^3.5.0",
     "chai": "^3.5.0",
     "expect": "^1.20.2",
