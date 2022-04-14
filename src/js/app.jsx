@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default class App extends React.Component {
   // your Javascript goes here
@@ -17,15 +17,12 @@ export default class App extends React.Component {
   }
 
   handleChange(e) {
-    console.log("handleChange()");
     const name = e.target.name;
     const value = e.target.value;
     this.setState({ [name]: value });
   }
 
   handleClick() {
-    console.log("handleClick()");
-
     const principal = this.state.balance;
     const n = this.state.term * 12;
     const r = this.state.rate / 1200;
@@ -35,29 +32,29 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className='container'>
         {/* your JSX goes here */}
         <h1>Mortgage Calculator</h1>
 
-        <input name="balance" type="number" onChange={this.handleChange} />
+        <input name='balance' type='number' onChange={ this.handleChange } />
         <input
-          name="rate"
-          type="number"
-          step="0.01"
-          onChange={this.handleChange}
+          name='rate'
+          type='number'
+          step='0.01'
+          onChange={ this.handleChange }
         />
-        <select name="term" onChange={this.handleChange}>
-          <option value="15">15</option>
-          <option value="30">30</option>
+        <select name='term' onChange={ this.handleChange }>
+          <option value='15'>15</option>
+          <option value='30'>30</option>
         </select>
-        <button name="submit" onClick={this.handleClick}>
+        <button name='submit' onClick={ this.handleClick }>
           Calculate
         </button>
-        <div id="output">
-          Your monthly payment is{" "}
-          {new Intl.NumberFormat("dollars", {
-            style: "currency",
-            currency: "USD"
+        <div id='output'>
+          Your monthly payment is{''}
+          {new Intl.NumberFormat('dollars', {
+            style: 'currency',
+            currency: 'USD'
           }).format(this.state.result)}
         </div>
       </div>
